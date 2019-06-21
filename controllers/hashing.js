@@ -15,8 +15,16 @@ exports.postMessage = (req, res) => {
   if (!hashStore[hash]) {
     hashStore[hash] = message;
   }
-  console.log("hashStore:", hashStore);
 
   //send digest back to user.
   res.status(201).json({ digest: hash });
+};
+
+exports.getMessage = (req, res) => {
+  const hash = req.params.hash;
+  if (hashStore[hash]) {
+    res.status(200).json({ message: hashStore[hash] });
+  } else {
+    res.status(404).send("Not Found.");
+  }
 };
