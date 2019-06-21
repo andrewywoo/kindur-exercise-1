@@ -22,6 +22,8 @@ exports.postMessage = (req, res) => {
 
 exports.getMessage = (req, res) => {
   const hash = req.params.hash;
+
+  //if hashStore contains hash. send message back to user. if not send 404.
   if (hashStore[hash]) {
     res.status(200).json({ message: hashStore[hash] });
   } else {
