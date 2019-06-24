@@ -30,7 +30,7 @@ To start the express server, run the following
 npm run start
 ```
 
-##How to use
+## How to use
 
 The endpoints that can be reached after running the development server are:
 
