@@ -2,7 +2,7 @@ const request = require("supertest");
 const app = require("../app");
 
 describe("Test GET message before POST", () => {
-  test("It should return a 404 since no message was hashed yet", async done => {
+  test("It should return a 404", async done => {
     const response = await request(app).get("/message/testing");
     expect(response.statusCode).toBe(404);
     done();
@@ -34,6 +34,15 @@ describe("Test GET message after POST", () => {
     const response2 = await request(app).get("/message/" + expectedHash);
     expect(response2.statusCode).toBe(200);
     expect(response2.body.message).toBe("foo");
+    done();
+  });
+});
+
+describe("Test POST Message without body", () => {
+  test("It should send back status code 400", async done => {
+    const httpRequest = request(app).post("/message");
+    const response = await httpRequest;
+    expect(response.statusCode).toBe(400);
     done();
   });
 });

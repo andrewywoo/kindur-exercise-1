@@ -5,6 +5,9 @@ const hashStore = {};
 
 exports.postMessage = (req, res) => {
   const message = req.body.message;
+  if (!message) {
+    res.status(400).send("Invalid Param");
+  }
 
   //create hash
   const hash = crypto
