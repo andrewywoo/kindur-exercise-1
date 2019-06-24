@@ -38,15 +38,17 @@ Run tests with jest with the following command
 npm run test
 ```
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## Built With
+
+- Node.js
+- Express.js
+- Body Parser
+
+Dev Dependencies
+
+- Nodemon
+- Jest
+- Supertest
 
 ## Authors
 
