@@ -34,8 +34,8 @@ npm run start
 
 The endpoints that can be reached after running the development server are:
 
-GET http://localhost:8080/message/:hashkey
-POST http://localhost:8080/message
+- GET http://localhost:8080/message/:hashkey
+- POST http://localhost:8080/message
 
 ## Running the tests
 
