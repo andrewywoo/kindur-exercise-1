@@ -19,4 +19,4 @@ app.use((req, res, next) => {
 //set middleware for message routes
 app.use(messagesRouter);
 
-app.listen(8080);
+module.exports = app;

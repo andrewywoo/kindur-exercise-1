@@ -1,5 +1,6 @@
 const crypto = require("crypto");
 
+//if real implementation setup mongodb to persist data using hash as the primary key.
 const hashStore = {};
 
 exports.postMessage = (req, res) => {

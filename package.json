@@ -4,8 +4,8 @@
   "description": "coding exercise",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "test": "jest --detectOpenHandles",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/andrewywoo/kindur-exercise-1#readme",
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
