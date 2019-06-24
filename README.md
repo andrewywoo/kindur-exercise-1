@@ -1,6 +1,6 @@
 # Kindur Exercise 1 - Rest API
 
-This is a coding exercise to create a get and post API to hash a message using sha256 and return back the original message.
+This is a coding exercise to create a get and post API to hash a message using sha256 and return back the original message. If the hash does not match any original post message, send back a 404.
 
 ## Getting Started
 
@@ -30,6 +30,13 @@ To start the express server, run the following
 npm run start
 ```
 
+##How to use
+
+The endpoints that can be reached after running the development server are:
+
+GET http://localhost:8080/message/:hashkey
+POST http://localhost:8080/message
+
 ## Running the tests
 
 Run tests with jest with the following command
@@ -37,6 +44,15 @@ Run tests with jest with the following command
 ```bash
 npm run test
 ```
+
+## Test Cases
+
+The following test cases run with Jest
+
+- 404 on hash that does not exist
+- Valid POST where message produces sha256 hash
+- Valid GET where original message has been sent back
+- Invalid Arguments
 
 ## Built With
 
