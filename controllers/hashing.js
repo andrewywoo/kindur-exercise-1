@@ -34,3 +34,11 @@ exports.getMessage = (req, res) => {
     res.status(404).send("Not Found.");
   }
 };
+
+exports.deleteMessage = (req, res) => {
+  const hash = req.params.hash;
+
+  //delete hashStore
+  delete hashStore[hash];
+  res.status(204).end();
+};

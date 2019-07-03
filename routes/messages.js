@@ -8,4 +8,6 @@ router.post("/message", hashing.postMessage);
 
 router.get("/message/:hash", hashing.getMessage);
 
+router.delete("/message/:hash", hashing.deleteMessage);
+
 module.exports = router;

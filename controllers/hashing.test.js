@@ -46,3 +46,27 @@ describe("Test POST Message without body", () => {
     done();
   });
 });
+
+describe("Test DELETE message after POST", () => {
+  test("It should delete saved hash after confirming with GET.", async done => {
+    const expectedHash =
+      "2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae";
+    const httpRequest = request(app).post("/message");
+    httpRequest.send({ message: "foo" });
+    const response = await httpRequest;
+    expect(response.statusCode).toBe(201);
+    expect(response.body.digest).toBe(expectedHash);
+
+    const response2 = await request(app).get("/message/" + expectedHash);
+    expect(response2.statusCode).toBe(200);
+    expect(response2.body.message).toBe("foo");
+
+    const response3 = await request(app).delete("/message/" + expectedHash);
+    expect(response3.statusCode).toBe(204);
+
+    const response4 = await request(app).get("/message/" + expectedHash);
+    expect(response4.statusCode).toBe(404);
+
+    done();
+  });
+});
