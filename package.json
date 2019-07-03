@@ -2,10 +2,10 @@
   "name": "kindur-exercise-1",
   "version": "1.0.0",
   "description": "coding exercise",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "jest --detectOpenHandles",
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
